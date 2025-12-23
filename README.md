@@ -55,3 +55,21 @@ The adaptive filter estimates the noise component using the reference input and 
 ---
 
 ## 📁 Project Structure
+Adaptive_Noise_Cancellation/
+│
+├── data/
+│ ├── clean_signal.mat
+│ ├── noisy_signal.mat
+│ └── noise_reference.mat
+│
+├── algorithms/
+│ ├── lms_filter.m
+│ ├── nlms_filter.m
+│ └── rls_filter.m
+│
+├── metrics/
+│ ├── snr_calc.m
+│ ├── mse_calc.m
+│
+├── main.m
+└── README.md
