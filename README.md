@@ -1,4 +1,4 @@
-Adaptive Noise Cancellation using Adaptive Filters (MATLAB)
+#Adaptive Noise Cancellation using Adaptive Filters (MATLAB)
 📌 Overview
 
 This project implements an Adaptive Noise Cancellation (ANC) framework in MATLAB to remove noise from real-world signals using adaptive filtering techniques. The system evaluates and compares three widely used adaptive algorithms — LMS, NLMS, and RLS — based on their noise reduction performance, convergence behavior, and stability.
