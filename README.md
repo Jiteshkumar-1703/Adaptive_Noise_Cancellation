@@ -1,88 +1,57 @@
-#Adaptive Noise Cancellation using Adaptive Filters (MATLAB)
-📌 Overview
+# Adaptive Noise Cancellation using Adaptive Filters (MATLAB)
 
-This project implements an Adaptive Noise Cancellation (ANC) framework in MATLAB to remove noise from real-world signals using adaptive filtering techniques. The system evaluates and compares three widely used adaptive algorithms — LMS, NLMS, and RLS — based on their noise reduction performance, convergence behavior, and stability.
+## 📌 Overview
+This project presents the design and implementation of an **Adaptive Noise Cancellation (ANC) framework** in MATLAB for removing noise from real-world signals using adaptive filtering techniques. The framework implements and systematically compares three widely used adaptive algorithms — **Least Mean Squares (LMS), Normalized Least Mean Squares (NLMS), and Recursive Least Squares (RLS)** — based on their **noise reduction performance, convergence behavior, stability, and computational complexity**.
 
-The project focuses on practical signal processing, not textbook-only demonstrations, and uses realistic noise conditions such as power-line interference and random noise.
+The project focuses on **practical signal processing scenarios** rather than idealized textbook examples and incorporates **realistic noise conditions**, such as **power-line interference and random noise**, to evaluate algorithm effectiveness.
 
-🎯 Objectives
+---
 
-Design an adaptive noise cancellation system using MATLAB
+## 🎯 Objectives
+- Design and implement an adaptive noise cancellation system using MATLAB  
+- Implement and compare the following adaptive filtering algorithms:
+  - Least Mean Squares (LMS)
+  - Normalized Least Mean Squares (NLMS)
+  - Recursive Least Squares (RLS)
+- Evaluate algorithm performance using **quantitative metrics**
+- Analyze **convergence speed, stability, and computational complexity**
 
-Implement and compare:
+---
 
-Least Mean Squares (LMS)
+## 🧠 System Description
+The adaptive noise cancellation system operates using two input signals:
 
-Normalized LMS (NLMS)
+- **Primary Input (d[n])**  
+  Desired signal corrupted by additive noise  
 
-Recursive Least Squares (RLS)
+- **Reference Input (x[n])**  
+  Noise reference signal correlated with the noise present in the primary input  
 
-Evaluate algorithms using quantitative metrics
+The adaptive filter estimates the noise component using the reference input and subtracts it from the primary input to produce a **cleaned output signal**. Filter coefficients are continuously updated to minimize the error signal.
 
-Analyze convergence speed, stability, and computational complexity
+---
 
-🧠 System Description
+## 🧩 Algorithms Implemented
 
-The ANC system operates using two inputs:
+### 1. Least Mean Squares (LMS)
+- Simple and computationally efficient algorithm  
+- Convergence strongly depends on the choice of step size (μ)  
+- Sensitive to variations in input signal power  
 
-Primary Input (d[n]): Desired signal corrupted by noise
+---
 
-Reference Input (x[n]): Noise reference correlated with the noise in the primary input
+### 2. Normalized Least Mean Squares (NLMS)
+- Step size normalized using input signal energy  
+- Improved numerical stability compared to LMS  
+- Faster and more consistent convergence  
 
-The adaptive filter estimates the noise component, which is subtracted from the primary input to obtain a cleaned output signal.
+---
 
-🧩 Algorithms Implemented
-1. Least Mean Squares (LMS)
+### 3. Recursive Least Squares (RLS)
+- Fastest convergence among implemented algorithms  
+- Superior noise cancellation performance  
+- Higher computational and memory requirements  
 
-Simple and computationally efficient
+---
 
-Convergence depends heavily on step size (μ)
-
-Sensitive to input signal power
-
-2. Normalized LMS (NLMS)
-
-Normalizes step size using input signal power
-
-Improved stability and faster convergence compared to LMS
-
-3. Recursive Least Squares (RLS)
-
-Fastest convergence
-
-Excellent noise cancellation performance
-
-Higher computational complexity and memory usage
-
-📁 Project Structure
-Adaptive_Noise_Cancellation/
-│
-├── data/
-│   ├── clean_signal.mat
-│   ├── noisy_signal.mat
-│   └── noise_reference.mat
-│
-├── algorithms/
-│   ├── lms_filter.m
-│   ├── nlms_filter.m
-│   └── rls_filter.m
-│
-├── metrics/
-│   ├── snr_calc.m
-│   ├── mse_calc.m
-│
-├── main.m
-└── README.md
-
-📊 Performance Metrics
-
-The following metrics are used for evaluation:
-
-Signal-to-Noise Ratio (SNR)
-Measures noise reduction effectiveness
-
-Mean Square Error (MSE)
-Indicates steady-state performance
-
-Convergence Behavior
-Observed through error signal evolution
+## 📁 Project Structure
